@@ -1,0 +1,12 @@
+<!-- first_pkg/launch/simulation.launch -->
+
+<launch>
+  <!-- Include turtlebot3_world.launch from turtlebot3_gazebo package -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch" />
+
+  <!-- Include turtlebot3_remote.launch from turtlebot3_bringup package -->
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" />
+</launch>
+
+
+

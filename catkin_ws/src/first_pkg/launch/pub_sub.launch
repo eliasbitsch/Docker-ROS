@@ -1,0 +1,9 @@
+<launch>
+    <!-- Start our create node -->
+    <node pkg="first_pkg" type="points_publisher.py" name="overwritten_pub_name">
+    </node>
+    <node pkg="first_pkg" type="points_subscriber.py" name="overwritten_sub_name" output="screen">
+    </node>
+</launch>
+
+

@@ -1,0 +1,5 @@
+<launch>
+    <!-- Start our create node -->
+    <node pkg="first_pkg" type="first_node.py" name="Hagrid"  output="screen">
+    </node>
+</launch>

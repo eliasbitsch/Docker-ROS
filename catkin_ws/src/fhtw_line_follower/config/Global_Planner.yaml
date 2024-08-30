@@ -1,0 +1,8 @@
+# example values
+ lethal_cost: 253
+ neutral_cost: 45
+ cost_factor: 1
+# example values
+
+ publish_potential: true
+ orientation_mode : 1

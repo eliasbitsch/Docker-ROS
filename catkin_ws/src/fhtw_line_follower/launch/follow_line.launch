@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<launch>
+    <!-- Detection node  -->
+    <node name="detection_node" pkg="fhtw_line_follower" type="main_detection.py" output="screen"/>
+    
+    <!-- Motion node  -->
+    <node name="motion_node" pkg="fhtw_line_follower" type="main_motion.py" output="screen">
+        <param name="steering_method" value="proportional"/>
+    </node>
+
+</launch>

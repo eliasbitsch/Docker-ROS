@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+    <!-- Line detection node  -->
+    <node name="line_detection_node" pkg="fhtw_line_follower" type="line_detected.py" output="screen"/>
+    
+</launch>

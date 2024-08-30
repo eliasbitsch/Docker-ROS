@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find fhtw_line_follower)/maps/models"/>
+    <arg name="x_pos"   default="-0.55"/> <!---0.55-->
+    <arg name="y_pos"   default="6.2"/>   <!--6.2-->
+    <arg name="z_pos"   default="0"/> 
+    <arg name="roll"    default="0"/>
+    <arg name="pitch"   default="0"/>
+    <arg name="yaw"     default="-1.5707"/>
+    <arg name="gui"     default="false"/>
+
+
+    <include file="$(find gazebo_ros)launch/empty_world.launch">
+        <arg name="world_name"      value="$(find fhtw_line_follower)/maps/project/project.world"/>
+        <arg name="paused"          value="false"/>
+        <arg name="use_sim_time"    value="true"/>
+        <arg name="gui"             value="$(arg gui)"/>
+        <arg name="headless"        value="false"/>
+        <arg name="debug"           value="false"/>
+        <arg name="extra_gazebo_args"   value="--verbose"/>
+    </include>
+
+    <!-- Bringup TFs -->
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch"/>
+    <!-- Spawn Simulated Robot in GAZEBO -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find fhtw_line_follower)/urdf/turtlebot3_burger_for_autorace.urdf.xacro" />
+    <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_burger -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw) -param robot_description" />
+
+    <!-- Start Move_Base -->
+    <include file="$(find fhtw_line_follower)/launch/move_base_project.launch"/>
+
+    <!-- Map server -->
+    <node pkg="map_server" name="map_server" type="map_server" args="$(find fhtw_line_follower)/maps/project/maze.yaml"/>
+    <!-- AMCL -->
+    <include file="$(find fhtw_line_follower)/launch/amcl.launch"/>
+
+
+    <!-- Start Dynamic Reconfigure -->
+    <node name="reconf" pkg="rqt_reconfigure" type="rqt_reconfigure"/>
+    <!-- RVIZ Configuration -->
+    <node pkg="rviz" name="rviz" type="rviz" args="-d $(find fhtw_line_follower)/config/config.rviz"/>
+
+</launch>
+        
+

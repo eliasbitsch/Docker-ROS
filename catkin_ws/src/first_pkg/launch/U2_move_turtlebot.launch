@@ -1,0 +1,13 @@
+<launch>
+    <!-- Include first_pkg simulation.launch from first_pkg package -->
+    <include file="$(find first_pkg)/launch/simulation.launch"/>
+
+    <!-- Create Turtlebot node -->
+    <node pkg="first_pkg" type="move_turtlebot.py" name="move_turtle_node" output="screen" />
+
+    <!-- Start rviz with desired topics -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find first_pkg)/rviz_conf.rviz" />
+
+    <!-- Create unit2_hw node -->
+    <node pkg="first_pkg" type="unit2_hw.py" name="unit2_hw_node" output="screen" />
+</launch>

@@ -1,0 +1,25 @@
+<launch>
+
+    <!-- Launch world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="false" />
+        <arg name="use_sim_time" value="true" />
+        <arg name="gui" value="false" />
+    </include>
+
+    <!-- Find robot description -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_burger.urdf.xacro" />
+
+    <!-- Spawn robot -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3_burger -x 0 -y 0 -z 0 -param robot_description" />
+
+    <!-- Launch remote -->
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch" />
+
+    <!-- Launch rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find first_pkg)/rviz/unit3_hw_rviz_conf.rviz"/>
+
+    <!-- Launch Python file -->
+    <node pkg="first_pkg" type="unit3_hw.py" name="unit3_hw_node" output="screen" />
+
+</launch>
