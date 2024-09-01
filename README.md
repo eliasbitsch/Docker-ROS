@@ -120,9 +120,32 @@ To quit the script, press `ctrl+c` in the terminal where the script is running.
 
 
 
-<p align="center">
-  <a href="https://www.youtube.com/watch?v=VIDEO_ID">
-    <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Watch the video" width="600"/>
-  </a>
-</p>
+<div id="yt-container">
+  <iframe
+    id="yt-player"
+    width="320"
+    height="180"
+    src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<style>
+  #yt-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    height: 180px;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #yt-player {
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
