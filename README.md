@@ -1,6 +1,6 @@
-#Line-Follower-Path-Planner
+# Line-Follower-Path-Planner
 
-https://github.com/user-attachments/assets/58f34c64-bf6c-41ce-9fb1-79a03aa6f12a
+https://github.com/user-attachments/assets/a69f8010-35b8-4b13-b799-5cb72d04e338
 
 ## Instructions for Docker 
 
