@@ -1,4 +1,8 @@
-# Instructions for Docker 
+#Line-Follower-Path-Planner
+
+
+
+## Instructions for Docker 
 
 The following readme gives a short introduction on how to use the docker container on Linux and on Windows.   
 Note that it is not possible to communicate with other hosts (e.g. Turtlebot) via wifi nor lan if you use docker on Windows.
@@ -117,35 +121,4 @@ rosparam set /motion_node/steering_mode proportional
 
 To quit the script, press `ctrl+c` in the terminal where the script is running.
 
-
-
-
-<div id="yt-container">
-  <iframe
-    id="yt-player"
-    width="320"
-    height="180"
-    src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&mute=1"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</div>
-
-<style>
-  #yt-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 320px;
-    height: 180px;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  #yt-player {
-    width: 100%;
-    height: 100%;
-  }
-</style>
 
