@@ -116,3 +116,9 @@ rosparam set /motion_node/steering_mode proportional
 ## Quit
 
 To quit the script, press `ctrl+c` in the terminal where the script is running.
+
+
+
+
+
+[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg)](https://youtu.be/dQw4w9WgXcQ)
