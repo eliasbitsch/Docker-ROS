@@ -120,5 +120,9 @@ To quit the script, press `ctrl+c` in the terminal where the script is running.
 
 
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=VIDEO_ID">
+    <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Watch the video" width="600"/>
+  </a>
+</p>
 
-[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg)](https://youtu.be/dQw4w9WgXcQ)
